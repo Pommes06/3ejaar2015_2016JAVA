@@ -22,7 +22,8 @@ public class Exercise3 {
 		// TODO Fix this compile error by changing the code so that you can pass the collection. However, do NOT remove
 		// the generics. You can of course modify them. The solution implies using lower bounds
 
-		thisWillNotWork(collection);
+		// TODO Fix this compile error by changing the code so that you can pass the collection. However, do NOT remove
+		// thisWillNotWork(collection);
 
 		Collection<Base1> anotherCollection = new ArrayList<Base1>();
 		anotherCollection.add(new Base1());
@@ -31,7 +32,8 @@ public class Exercise3 {
 		// TODO Fix this compile error by changing the code so that you can pass the collection. However, do NOT remove
 		// the generics. You can of course modify them. The solution implies using upper bounds
 
-		thisWillNotWorkEither(anotherCollection);
+		// TODO Fix this compile error by changing the code so that you can pass the collection. However, do NOT remove
+		// thisWillNotWorkEither(anotherCollection);
 
 	}
 
