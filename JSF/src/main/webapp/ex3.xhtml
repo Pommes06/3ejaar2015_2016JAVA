@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+    <f:view>
+        <h:form id="myForm">
+            <div style="border: black solid; min-height: 50px; width: 700px">
+                <h:messages errorStyle="color:red"></h:messages>
+            </div>
+            <br></br>
+
+            <br></br>
+            <p:commandButton value="Druk" actionListener="#{ex3.buttonpress}" update=":myForm"></p:commandButton>
+            <br></br>
+            <br></br>
+            <h:inputText id="intekst" size="50" value="#{ex3.inputtekst}">
+                <f:validateLongRange />
+            </h:inputText>
+            <h:outputLabel id="outputlabel" size="50" value="#{ex3.inputtekst}" rendered="#{!facesContext.validationFailed}" />
+            <br></br>
+            <h:message for="intekst"></h:message>
+            <br></br>
+            <br></br>
+            <p:calendar id="datepick" value="#{ex3.inputdate}"></p:calendar>
+            <h:outputLabel value="#{ex3.inputdate}" rendered="#{!facesContext.validationFailed}"></h:outputLabel>
+            <h:message for="datepick" style="color:red"></h:message>
+
+            <br></br>
+            <h:inputText id="inteksttwee" value="#{ex3.inputtwee}"></h:inputText>
+            <h:outputLabel id="outputlabeltwee" size="50" value="#{ex3.inputtwee}" rendered="#{!facesContext.validationFailed}"></h:outputLabel>
+            <h:message for="outputlabeltwee"></h:message>
+        </h:form>
+    </f:view>
+</h:body>
+</html>

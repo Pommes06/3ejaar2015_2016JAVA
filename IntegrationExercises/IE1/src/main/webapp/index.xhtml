@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/resources/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <br/>
+        <br/>
+        <br/>
+
+        <h:outputText value="#{msg['zoekvenstertitel']}"></h:outputText>
+        <hr></hr>
+        <h:form id="form">
+            <div id="searchpart">
+                <p:panel id="panel">
+                    <h:messages id="backingmsg" for="form"></h:messages>
+                    <h:panelGrid columns="4">
+
+                        <h:outputLabel value="#{msg['minamount']}"></h:outputLabel>
+                        <h:inputText id="minamount" value="#{search.orderSearchCriteria.minAmount}" converterMessage="#{msg['validateminamount']}">
+                            <f:validator validatorId="BigDecimalValidator"/>
+                            <f:ajax event="blur" render="msgminamount"></f:ajax>
+                        </h:inputText>
+                        <h:outputLabel value="#{msg['maxamount']}"></h:outputLabel>
+                        <h:inputText id="maxamount"
+                                     value="#{search.orderSearchCriteria.maxAmount}"
+                                     converterMessage="#{msg['validatemaxamount']}">
+                            <f:convertNumber pattern="#,###,##0.00"/>
+                            <f:ajax event="blur" render="msgmaxamount"></f:ajax>
+                        </h:inputText>
+
+                        <div></div>
+                        <h:message style="color:red" id="msgminamount" for="minamount"></h:message>
+
+                        <div></div>
+                        <h:message style="color:red" id="msgmaxamount" for="maxamount"></h:message>
+
+
+                        <h:outputLabel value="#{msg['nrofproducts']}"></h:outputLabel>
+                        <h:inputText id="nrofproducts"
+                                     value="#{search.orderSearchCriteria.numberOfProducts}"
+                                     converterMessage="#{msg['validatenrofproducts']}">
+                            <f:convertNumber></f:convertNumber>
+                            <f:ajax event="blur" render="msgnrofproducts"></f:ajax>
+                        </h:inputText>
+                        <h:outputLabel value="#{msg['delivered']}"></h:outputLabel>
+                        <h:selectBooleanCheckbox id="delivered"
+                                                 value="#{search.orderSearchCriteria.delivered}"></h:selectBooleanCheckbox>
+
+                        <div></div>
+                        <h:message style="color:red" id="msgnrofproducts"
+                                   for="nrofproducts"></h:message>
+
+                        <div></div>
+                        <h:column></h:column>
+
+                        <h:outputLabel value="#{msg['productname']}"></h:outputLabel>
+                        <h:inputText id="productname"
+                                     value="#{search.orderSearchCriteria.productName}"></h:inputText>
+                        <h:outputLabel value="#{msg['emailaddress']}"></h:outputLabel>
+                        <h:inputText id="email"
+                                     value="#{search.orderSearchCriteria.email}"
+                                     validatorMessage="#{msg['validateemailaddress']}"
+                                     required="false">
+                            <f:validateRegex
+                                    pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"
+                                    disabled="false"></f:validateRegex>
+                            <f:ajax event="blur" render="msgemail"></f:ajax>
+                        </h:inputText>
+
+                        <div></div>
+                        <h:column></h:column>
+                        <h:column></h:column>
+                        <h:message style="color:red" id="msgemail" for="email"></h:message>
+
+                        <h:column></h:column>
+                        <h:column></h:column>
+                        <h:column></h:column>
+                        <h:column></h:column>
+                        <h:column></h:column>
+                        <h:column></h:column>
+                        <h:column></h:column>
+
+                        <h:column>
+                            <p:commandButton id="resetbutton" immediate="true" resetValues="true" value="#{msg['clearbutton']}"  actionListener="#{search.reset}"
+                                             update="form"></p:commandButton>
+                            <p:commandButton value="#{msg['searchbutton']}"
+                                             actionListener="#{search.searchorders}" update="form" ></p:commandButton>
+                        </h:column>
+                    </h:panelGrid>
+                </p:panel>
+
+
+            </div>
+            <br/>
+
+            <h:outputText value="#{msg['resultatenvenstertitel']}"></h:outputText>
+            <hr></hr>
+
+            <p:dataTable id="orderstable" var="anorder"
+                         value="#{search.foundorders}" rendered="true">
+
+                <p:column headerText="#{msg['orderid']}" style="width:10%">
+                    <h:outputText value="#{anorder.id}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['customerid']}" style="width:17%">
+                    <h:outputText value="#{anorder.customerId}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['nrproducts']}" style="width:17%">
+                    <h:outputText value="#{anorder.nrproducts}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['deliveredtitel']}?" style="width:17%">
+                    <h:outputText value="#{anorder.delivered}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['deliverydays']}" style="width:17%">
+                    <h:outputText value="#{anorder.deliveryDays}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['totalprice']}" style="width:17%">
+                    <h:outputText value="#{anorder.totalOrderPrice}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['details']}" style="width:5%">
+
+                    <h:commandLink value="#{msg['click']}" action="orderdetail">
+                        <f:setPropertyActionListener target="#{search.selectedOrder}" value="#{anorder}"/>
+                    </h:commandLink>
+                </p:column>
+
+            </p:dataTable>
+
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
