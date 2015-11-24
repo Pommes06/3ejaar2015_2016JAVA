@@ -2,7 +2,10 @@ package be.groept.tests;
 
 import java.util.ArrayList;
 import java.util.Collection;
+<<<<<<< HEAD
 import java.util.
+=======
+>>>>>>> 2bc10645ff0e6d8947126da740b0413ed277c913
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -40,7 +43,11 @@ public class Exercise4 {
 		// So, the result will be a double which represents the average age of the persons from or older than 50.
 		// Again, the wanted solution using the Stream API is exactly one line of code (not formatted of course)!
 
+<<<<<<< HEAD
 		double averageAge = data.stream().; // add you code here, remove the = 0 first of course, if the code is correct the test
+=======
+		double averageAge = 0; // add you code here, remove the = 0 first of course, if the code is correct the test
+>>>>>>> 2bc10645ff0e6d8947126da740b0413ed277c913
 		// will succeed
 		Assert.assertEquals(averageAge, 74.5);
 	}
