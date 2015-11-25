@@ -2,15 +2,26 @@ package groept.be.ui;
 
 
 import com.vaadin.data.util.converter.StringToIntegerConverter;
-import com.vaadin.server.ErrorMessage;
 import com.vaadin.ui.*;
 
-public class Ex2View extends VerticalLayout{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ex4View extends GridLayout{
 
 
     {
         setSpacing(true);
+        setColumns(2);
+        setRows(5);
     }
+
+    private List<String> gemeenten = new ArrayList<String>(){
+
+    };
+
+    private ComboBox comboBox = new ComboBox("Select your city:",gemeenten);
+
     private Button bt1 = new Button();
 
     private Label lb1 = new Label();
@@ -21,7 +32,7 @@ public class Ex2View extends VerticalLayout{
     private HorizontalLayout hl2 = new HorizontalLayout();
 
 
-    public Ex2View() {
+    public Ex4View() {
 
         bt1.setCaption("Druk");
         inputveld.setInputPrompt("Schrijf hier");
@@ -30,7 +41,7 @@ public class Ex2View extends VerticalLayout{
         inputveld.setImmediate(true);
 
         bt1.addClickListener(event -> {
-            if(inputveld.isValid()) {
+            if (inputveld.isValid()) {
                 String caption = inputveld.getValue();
 
                 lb1.setCaption(caption);

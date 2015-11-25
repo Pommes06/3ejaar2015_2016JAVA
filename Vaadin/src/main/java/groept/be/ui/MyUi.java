@@ -2,14 +2,15 @@ package groept.be.ui;
 
 
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Notification;
-import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.server.VaadinSession;
+import com.vaadin.ui.*;
+import com.vaadin.ui.components.calendar.CalendarComponentEvents;
 
 import javax.servlet.annotation.WebServlet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class MyUi extends UI {
 
@@ -36,10 +37,22 @@ public class MyUi extends UI {
 
         verticalLayout.addComponents(button1, button);
 
+
+        VaadinSession.getCurrent().setAttribute(AtomicInteger.class,new AtomicInteger(0)); //pas sur pour le 0 dedans...
         //setContent(verticalLayout);
         //setContent(new Ex1View());
-        setContent(new Ex2View());
+        //setContent(new Ex2View());
 
+
+        //voor ex6 navigatie, gebruiken we een panel en in de panel worden verschillende views geladen
+        Panel panel = new Panel();
+        Navigator nav = new Navigator(this,panel);
+        nav.addView("page1",Ex6page1.class);
+        nav.addView("page2",Ex6page2.class);
+
+        nav.navigateTo("page1"); //je moet altijd een startpagina bepalen.
+
+        setContent(panel);
 
     }
 

@@ -8,6 +8,11 @@ import com.vaadin.ui.Panel;
 
 public class Ex1View extends HorizontalLayout{
 
+    {
+        setSpacing(true); //semble correct à Koen. entre les {} c'est un code qui sera exécuté avant le constructeur...
+    }
+
+
     private Button bt1 = new Button();
 
     private Label lb1 = new Label();
