@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Ex6page1 extends GridLayout implements View{
+public class Ex6page3 extends GridLayout implements View{
 
 
     {
@@ -19,8 +19,6 @@ public class Ex6page1 extends GridLayout implements View{
         setColumns(1);
         setRows(2);
     }
-
-
 
 
     private Button previous = new Button();
@@ -32,12 +30,12 @@ public class Ex6page1 extends GridLayout implements View{
     private HorizontalLayout hl2 = new HorizontalLayout();
 
 
-    public Ex6page1() {
+    public Ex6page3() {
 
         previous.setCaption("Vorige");
         next.setCaption("Volgende");
 
-        next.addClickListener(event -> {
+        previous.addClickListener(event -> {
             UI.getCurrent().getNavigator().navigateTo("page2");
 
         });
@@ -46,7 +44,7 @@ public class Ex6page1 extends GridLayout implements View{
 
         //hl1.setHeight(20, Unit.PIXELS);
         hl1.addComponents(counter);
-        hl2.addComponents(next);
+        hl2.addComponents(previous);
 
 
         this.addComponents(hl1, hl2);

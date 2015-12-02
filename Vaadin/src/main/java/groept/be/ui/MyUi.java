@@ -42,17 +42,20 @@ public class MyUi extends UI {
         //setContent(verticalLayout);
         //setContent(new Ex1View());
         //setContent(new Ex2View());
-
+        //setContent(new Ex3View());
+        //setContent(new Ex5View());
 
         //voor ex6 navigatie, gebruiken we een panel en in de panel worden verschillende views geladen
         Panel panel = new Panel();
         Navigator nav = new Navigator(this,panel);
         nav.addView("page1",Ex6page1.class);
         nav.addView("page2",Ex6page2.class);
+        nav.addView("page3",Ex6page3.class);
 
         nav.navigateTo("page1"); //je moet altijd een startpagina bepalen.
 
         setContent(panel);
+
 
     }
 
