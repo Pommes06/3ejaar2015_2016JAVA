@@ -3,6 +3,8 @@ package be.groept.vaadin.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class OrderSearchCriteria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -77,5 +79,27 @@ public class OrderSearchCriteria implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public boolean hasNrOfProducts() {
+		if (this.getNumberOfProducts() != null) {
+			return true;
+		} else
+			return false;
+	}
+
+
+
+	// method that checks if at least one searchcriterium exists
+	public boolean hasSearchCriteria() {
+		//if delivered is checked, that counts as a search criteria, if unchecked it is not considered as a search criteria
+		if (hasPriceRange() || hasNrOfProducts()
+				|| !StringUtils.isEmpty(getEmail())
+				|| !StringUtils.isEmpty(getProductName()) || getDelivered()) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 }

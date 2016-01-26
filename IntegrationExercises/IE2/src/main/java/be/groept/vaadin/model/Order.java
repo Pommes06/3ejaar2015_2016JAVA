@@ -1,12 +1,12 @@
 package be.groept.vaadin.model;
 
-import static java.math.BigDecimal.ZERO;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
 
 public class Order implements Serializable {
 
@@ -17,22 +17,37 @@ public class Order implements Serializable {
 	private String customerId;
 	private List<Product> products;
 	private boolean delivered;
-	private int deliveryDays;
+	private final int deliveryDays;
 	private BigDecimal totalOrderPrice;
+	private final int nrofproducts;
 
-	public Order(Long id, String orderId, String customerId, boolean delivered, int deliveryDays, Product... products) {
+	public Order() {
+		this.nrofproducts = this.products.size();
+		this.deliveryDays = 0;
+	}
+
+	public Order(Long id, String orderId, String customerId, boolean delivered,
+			int deliveryDays, Product... products) {
 		this.id = id;
 		this.orderId = orderId;
 		this.customerId = customerId;
 		this.delivered = delivered;
 		this.deliveryDays = deliveryDays;
 		this.products = Arrays.asList(products);
+		this.nrofproducts = this.products.size();
 
 		calculateTotalOrderPrice();
 	}
 
 	private void calculateTotalOrderPrice() {
-		totalOrderPrice = products.stream().map(p -> p.getProductPrice()).reduce((r, e) -> r.add(e)).orElse(ZERO);
+		BigDecimal temp = BigDecimal.ZERO;
+
+		if (CollectionUtils.isNotEmpty(products)) {
+			for (Product product : products) {
+				temp = temp.add(product.getProductPrice());
+			}
+		}
+		this.totalOrderPrice = temp;
 	}
 
 	public Long getId() {
@@ -88,7 +103,7 @@ public class Order implements Serializable {
 		this.totalOrderPrice = totalOrderPrice;
 	}
 
-	public void setDeliveryDays(int deliveryDays) {
-		this.deliveryDays = deliveryDays;
+	public int getNrofproducts() {
+		return nrofproducts;
 	}
 }

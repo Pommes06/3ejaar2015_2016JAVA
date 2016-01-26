@@ -145,12 +145,9 @@
 	</build>
 	<modules>
 		<module>Introduction</module>
-<<<<<<< HEAD
 		<module>JSF</module>
 		<module>IntegrationExercises</module>
 		<module>Vaadin</module>
-=======
->>>>>>> 2bc10645ff0e6d8947126da740b0413ed277c913
 	</modules>
 	<dependencyManagement>
 		<dependencies>
