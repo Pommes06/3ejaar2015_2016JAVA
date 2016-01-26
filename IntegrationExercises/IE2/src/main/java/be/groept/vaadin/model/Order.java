@@ -36,6 +36,7 @@ public class Order implements Serializable {
 		this.products = Arrays.asList(products);
 		this.nrofproducts = this.products.size();
 
+
 		calculateTotalOrderPrice();
 	}
 

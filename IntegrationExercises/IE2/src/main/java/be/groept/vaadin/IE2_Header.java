@@ -27,6 +27,7 @@ public class IE2_Header extends HorizontalLayout {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
+				//change classname of header
 				event.getButton().getParent().getParent()
 						.removeStyleName("IE2Header");
 				event.getButton().getParent().getParent()
@@ -56,6 +57,7 @@ public class IE2_Header extends HorizontalLayout {
 
 		addStyleName("IE2Header");
 		setWidth(100, Unit.PERCENTAGE);
+
 
 	}
 

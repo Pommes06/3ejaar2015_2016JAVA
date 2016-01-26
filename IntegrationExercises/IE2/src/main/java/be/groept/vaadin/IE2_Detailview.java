@@ -42,6 +42,7 @@ public class IE2_Detailview extends IE2_Template {
 		Label lbdeldays = new Label("Delivery Days:");
 		sv1.addComponents(lborderid, lbnrodprods, lbdeldays);
 
+
 		VerticalLayout sv2 = new VerticalLayout();
 		Label lbcontentorderid = new Label(order.getOrderId());
 		Label lbcontentnrofprods = new Label(Integer.toString(order

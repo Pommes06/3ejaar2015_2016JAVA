@@ -50,6 +50,7 @@ public class StringToBigDecimalConverter implements
 		return result;
 	}
 
+
 	@Override
 	public String convertToPresentation(BigDecimal value,
 			Class<? extends String> targetType, Locale locale)

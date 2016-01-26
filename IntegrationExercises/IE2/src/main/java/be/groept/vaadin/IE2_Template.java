@@ -16,6 +16,7 @@ public abstract class IE2_Template extends CustomLayout implements View {
 
 		// setWidth(800, Unit.PIXELS);
 
+
 	}
 
 	// method that needs to be implemented by the view using this template

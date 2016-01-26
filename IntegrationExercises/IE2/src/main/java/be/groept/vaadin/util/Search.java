@@ -18,6 +18,7 @@ public class Search implements Serializable {
 		this.reset(); //initialize values
 	}
 
+
 	// property to test datatable
 	private List<Order> orders;
 

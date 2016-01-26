@@ -34,6 +34,7 @@ public class IE2_ui extends UI {
 		nv.addView("main", IE2_Overview.class);
 		nv.addView("detail", IE2_Detailview.class);
 
+
 		nv.navigateTo("main");
 
 	}

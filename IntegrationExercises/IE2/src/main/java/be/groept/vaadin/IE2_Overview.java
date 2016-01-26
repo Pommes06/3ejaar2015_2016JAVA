@@ -131,9 +131,11 @@ public class IE2_Overview extends IE2_Template {
 				txnrofprods.setValue(null);
 				txprodname.setValue(null);
 				chbxdelivered.setValue(false);
+				//empty and hide resultpanel
 				resultpanel.setVisible(false);
 
 				searcher.reset();
+
 			}
 		});
 		;
@@ -184,6 +186,9 @@ public class IE2_Overview extends IE2_Template {
 						// reinitialise Search object
 						searcher.reset();
 
+
+						//empty the potential previous tableresults
+						tableresults.removeAllItems();
 
 						// set table content here for each order found
 						for (final Order ord : foundorders) {
