@@ -148,6 +148,7 @@
 		<module>JSF</module>
 		<module>IntegrationExercises</module>
 		<module>Vaadin</module>
+		<module>Hibernate</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+	<class name="be.groept.hibernate.entities.caching.Item" entity-name="CachedItem" table="cached_item">
+	
+		<id name="id" type="long" column="id" access="property">
+			<generator class="native"/>
+		</id>
+	
+		<many-to-one name="itemDescription" class="be.groept.hibernate.entities.caching.Description"  
+					 column="item_description" cascade="all" />
+			
+	</class>
+</hibernate-mapping>
