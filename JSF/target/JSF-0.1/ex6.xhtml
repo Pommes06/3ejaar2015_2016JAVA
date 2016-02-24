@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+<f:view>
+    <h:form id="myForm">
+        <h:messages for="input2"></h:messages>
+        <h:panelGrid id="mainpanel" columns="3">
+
+           <h:inputText id="input1" value="#{ex6.input1}"></h:inputText>
+            <h:inputText id="input2" value="#{ex6.input2}">
+                <f:validateLength id="lengthvalidator" minimum="5"></f:validateLength>
+            </h:inputText>
+            <h:inputText id="input3" value="#{ex6.input3}"></h:inputText>
+
+            <h:outputLabel value="#{ex6.input1}" ></h:outputLabel>
+            <h:outputLabel value="#{ex6.input2}" ></h:outputLabel>
+            <h:outputLabel value="#{ex6.input3}" ></h:outputLabel>
+
+            <p:commandButton id="submitbutton" value="Submit" actionListener="#{ex6.submitbutton}" update="myForm"></p:commandButton>
+            <p:commandButton id="resetbutton" immediate="true" resetValues="true" value="Reset" actionListener="#{ex6.resetbutton}" update="myForm"></p:commandButton>
+
+        </h:panelGrid>
+
+
+
+    </h:form>
+</f:view>
+</h:body>
+</html>

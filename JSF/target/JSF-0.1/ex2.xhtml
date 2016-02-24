@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+<f:view>nopedd
+    <h:form id="myForm">
+        <h:messages for="myForm"></h:messages>
+        <br></br>
+        <h:outputLabel id="outputlabel" size="50" value="#{ex2.inputtekst}" rendered="#{!facesContext.validationFailed}" />
+
+        <p:commandButton value="Druk" actionListener="#{ex2.buttonpress}" update=":myForm"></p:commandButton>
+
+        <h:inputText id="intekst" size="50" value="#{ex2.inputtekst}">
+            <f:validateLongRange />
+        </h:inputText>
+        <h:message for="intekst" style="color:red"></h:message>
+    </h:form>
+</f:view>
+</h:body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+<f:view>
+    <h:form id="myForm">
+        <h:panelGrid columns="2">
+
+            <p:commandButton id="button1" actionListener="#{ex4.increment}" value="button1" update="outputlabel1"></p:commandButton>
+
+            <h:outputLabel value="#{ex4.counter}" id="outputlabel1" ></h:outputLabel>
+
+
+            <p:commandButton id="button2" actionListener="#{ex4.increment}" value="button2" update="outputlabel2"></p:commandButton>
+
+            <h:outputLabel value="#{ex4.counter}" id="outputlabel2" ></h:outputLabel>
+
+            <p:commandButton id="button3" actionListener="#{ex4.increment}" value="button3" update="outputlabel3"></p:commandButton>
+
+            <h:outputLabel value="#{ex4.counter}" id="outputlabel3" ></h:outputLabel>
+
+        </h:panelGrid>
+
+        <h:commandButton value="next" action="ex5"></h:commandButton>
+
+        <h:commandButton value="Update All" />
+
+    </h:form>
+</f:view>
+</h:body>
+</html>

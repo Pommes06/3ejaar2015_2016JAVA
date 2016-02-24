@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/resources/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+	<br/>
+	<h:form>
+    <p style="text-decoration: underline">Order details</p>
+    <p:panelGrid columns="4" style="width:50px;border:2px solid black; padding:10px">
+    	<h:outputLabel value="#{msg['orderid']}"></h:outputLabel>
+    	<h:outputLabel value="#{search.selectedOrder.id}"></h:outputLabel>
+    	<h:outputLabel value="#{msg['customerid']}"></h:outputLabel>
+    	<h:outputLabel value="#{search.selectedOrder.customerId}"></h:outputLabel>
+    	<h:outputLabel value="#{msg['nrproducts']}"></h:outputLabel>
+    	<h:outputLabel value="#{search.selectedOrder.nrofproducts}"></h:outputLabel>
+    	<h:outputLabel value="#{msg['delivered']}"></h:outputLabel>
+    	<h:outputLabel value="#{search.selectedOrder.delivered}"></h:outputLabel>
+    	<h:outputLabel value="#{msg['deliverydays']}"></h:outputLabel>
+    	<h:outputLabel value="#{search.selectedOrder.deliveryDays}"></h:outputLabel>
+    	<h:outputLabel value="#{msg['totalprice']}"></h:outputLabel>
+    	<h:outputLabel value="#{search.selectedOrder.totalOrderPrice}"></h:outputLabel>
+    
+    </p:panelGrid>
+<br/>
+<br/>
+<p style="text-decoration: underline">Products detail</p>
+<h:dataTable id="productstable" var="aproduct" value="#{search.selectedOrder.products}" style="border:solid black 2px;width:50%;">
+<h:column style="width:25%">
+            <f:facet name="header">
+                <h:outputText value="ProductId" />
+            </f:facet>
+            <h:outputText value="#{aproduct.id}"></h:outputText>
+</h:column>
+<h:column style="width:25%">
+            <f:facet name="header">
+                <h:outputText value="Name" />
+            </f:facet>
+            <h:outputText value="#{aproduct.productName}"></h:outputText>
+</h:column>
+<h:column style="width:25%">
+            <f:facet name="header">
+                <h:outputText value="Description" />
+            </f:facet>
+            <h:outputText value="#{aproduct.productDescription}"></h:outputText>
+</h:column>
+<h:column style="width:25%">
+            <f:facet name="header">
+                <h:outputText value="Price" />
+            </f:facet>
+            <h:outputText value="#{aproduct.productPrice}"></h:outputText>
+</h:column>
+</h:dataTable>
+
+
+    <h:commandButton value="Back" action="index" />
+</h:form>
+	</ui:define>
+</ui:composition>
+</html>

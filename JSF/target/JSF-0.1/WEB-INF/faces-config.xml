@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<validator>
+		<validator-id>integerValidator</validator-id>
+		<validator-class>be.groept.ex2.IntegerValidator</validator-class>
+	</validator>
+	<navigation-rule>
+		<from-view-id>../ex7_page1.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>../ex7_page2.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

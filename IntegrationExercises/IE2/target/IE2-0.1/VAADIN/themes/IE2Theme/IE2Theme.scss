@@ -1,0 +1,68 @@
+@import "../liferay/liferay.scss";
+
+@mixin IE2Theme {
+	@include liferay;
+	
+	font-style: italic;
+	font-family: serif;
+	background-color: white;
+	
+	/* An actual theme rule */
+	div .v-label{
+		height:30px;
+		margin:5px;
+		
+	}
+	
+	input{
+		height:30px;
+		margin:5px;
+	
+	}
+	
+	span.v-checkbox.v-widget{
+		height:30px;
+		margin:5px;
+	}
+	
+	DIV.v-button.v-widget{
+		margin:10px;
+	}
+	
+	
+	.IE2Header{
+		border: 2px solid black;
+
+	}
+	
+	.IE2Footer{
+		border: 2px solid black;
+
+	}
+	
+	.IE2Headerv2{
+		border: 10px dotted blue;
+	  	background-color: lightblue;
+	}
+	
+	.HeaderLabel{
+		font-size:20px;
+		font-style:bold;
+	}
+	
+	.v-button {
+	color: blue;
+	}
+	.v-button-caption{
+	color:blue;
+	}
+	
+	.v-app{
+		background-color: yellow;
+	}
+	
+	.IE2Theme .v-app {
+		background-color:navy;
+	}
+}
+

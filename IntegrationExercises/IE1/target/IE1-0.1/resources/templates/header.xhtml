@@ -1,0 +1,25 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+
+	<h:form>
+		<h:panelGrid id="headerpanel" columns="4">
+			<h:graphicImage value="/resources/images/order_logo.jpeg"></h:graphicImage>
+			<h:outputText id="headertitle" value="#{msg.welcome}"></h:outputText>
+
+			<h:outputText id="chooselanguage" style="font-size:12px;color:gray; font-style:italic; text-align: right;"  value="#{msg['chooselanguage']}"></h:outputText>
+
+				<h:selectOneMenu id="taaldropdown" value="#{language.localeCode}" onchange="submit()" valueChangeListener="#{language.changeLocale}">
+					<f:selectItem itemValue="en" itemLabel="en"></f:selectItem>
+					<f:selectItem itemValue="nl" itemLabel="nl"></f:selectItem>
+				</h:selectOneMenu>
+
+		</h:panelGrid>
+	</h:form>
+
+</html>
+

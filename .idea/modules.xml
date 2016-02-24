@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hibernate/Hibernate.iml" filepath="$PROJECT_DIR$/Hibernate/Hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntegrationExercises/IE1/IE1.iml" filepath="$PROJECT_DIR$/IntegrationExercises/IE1/IE1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntegrationExercises/IE2/IE2.iml" filepath="$PROJECT_DIR$/IntegrationExercises/IE2/IE2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntegrationExercises/IntegrationExercises.iml" filepath="$PROJECT_DIR$/IntegrationExercises/IntegrationExercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Introduction/Introduction.iml" filepath="$PROJECT_DIR$/Introduction/Introduction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSF/JSF.iml" filepath="$PROJECT_DIR$/JSF/JSF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vaadin/Vaadin.iml" filepath="$PROJECT_DIR$/Vaadin/Vaadin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-projects.iml" filepath="$PROJECT_DIR$/java-projects.iml" />
+    </modules>
+  </component>
+</project>
