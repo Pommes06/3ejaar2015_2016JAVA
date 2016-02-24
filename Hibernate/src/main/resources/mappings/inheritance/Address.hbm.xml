@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+	<class name="be.groept.hibernate.entities.inheritance.Address" table="inh_address" abstract="true" entity-name="AddressInh">
+
+		<id name="id" type="long" column="id" access="property">
+			<generator class="native"/>
+		</id>
+
+		<discriminator column="address_type"/>
+		
+		<property name="country"/>
+		<property name="municipality"/>
+		<property name="street"/>
+		
+		<property name="postalCode" column="postal_code"/>
+		<property name="houseNumber" column="house_number"/>
+		<property name="indexNumber" column="index_number"/>
+		
+		<property name="addressType" column="address_type" update="false" insert="false"/>
+	</class>
+</hibernate-mapping>

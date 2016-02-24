@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+	<class name="be.groept.hibernate.entities.types.User" table="user">
+
+		<id name="id" type="long" column="id" access="property">
+			<generator class="native"/>
+		</id>
+
+		<property name="username"/>
+		<property name="password" type="password"/>
+		
+	</class>
+</hibernate-mapping>
