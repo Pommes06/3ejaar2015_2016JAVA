@@ -149,7 +149,8 @@
 		<module>IntegrationExercises</module>
 		<module>Vaadin</module>
 		<module>Hibernate</module>
-    <module>JEE7</module>
+		<module>JEE7</module>
+		<module>RMI</module>
   </modules>
 	<dependencyManagement>
 		<dependencies>
