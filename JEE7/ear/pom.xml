@@ -32,6 +32,7 @@
 						<webModule>
 							<groupId>be.groept</groupId>
 							<artifactId>web</artifactId>
+							<contextRoot>/web</contextRoot>
 						</webModule>
 						<ejbModule>
 							<groupId>be.groept</groupId>
