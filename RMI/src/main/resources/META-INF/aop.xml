@@ -1,0 +1,14 @@
+<!DOCTYPE aspectj PUBLIC
+        "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+    <weaver options="-verbose">
+    	<include within="org.apache.commons.lang.*" />
+        <include within="be.groept.services.*" />
+        <include within="be.groept.aop.*" />
+    </weaver>
+    <aspects>
+        <!-- use only this aspect for weaving -->
+        <aspect name="be.groept.aop.StringAspect" />
+    </aspects>
+</aspectj>
+              
