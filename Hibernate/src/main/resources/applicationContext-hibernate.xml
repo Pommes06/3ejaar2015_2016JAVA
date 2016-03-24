@@ -29,6 +29,8 @@
 	<property name="mappingLocations">
 			<list>
 					<value>classpath:mappings/DemoMapping.hbm.xml</value>
+				<value>classpath:mappings/person.hbm.xml</value>
+				<value>classpath:mappings/address.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

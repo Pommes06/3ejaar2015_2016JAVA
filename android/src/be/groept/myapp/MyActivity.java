@@ -75,7 +75,7 @@ public class MyActivity extends Activity {
                     Log.d("broadcast","begin broadcasting in thread");
                     Intent intentTimeBC = new Intent("currenttime");
                     intentTimeBC.putExtra("date",new Date().toString());
-                    Log.d("time log",intentTimeBC.getExtras());
+                    Log.d("time log",intentTimeBC.getExtras().toString());
                     try {
                         Thread.sleep(1000);
                     } catch(InterruptedException e){

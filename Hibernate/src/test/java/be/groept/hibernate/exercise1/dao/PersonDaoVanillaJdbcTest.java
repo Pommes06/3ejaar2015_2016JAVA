@@ -80,6 +80,7 @@ public class PersonDaoVanillaJdbcTest extends AbstractTransactionalTestNGSpringC
 
 		personDao.savePerson(johnDoe);
 		personDao.savePerson(steveWilson);
+
 	}
 
 	@AfterMethod(alwaysRun = true)

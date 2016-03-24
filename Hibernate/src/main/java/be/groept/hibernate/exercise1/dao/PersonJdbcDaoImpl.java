@@ -2,7 +2,9 @@ package be.groept.hibernate.exercise1.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -29,6 +31,9 @@ public class PersonJdbcDaoImpl extends JdbcTemplate implements PersonDao {
 
 	public List<Person> findAll() {
 		// TODO make me work
+
+
+
 		return null;
 	}
 
