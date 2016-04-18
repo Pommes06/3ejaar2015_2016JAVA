@@ -4,8 +4,11 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="ejb" url="file://$PROJECT_DIR$/JEE7/ejb" />
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/JEE7/ear" />
     <file type="web" url="file://$PROJECT_DIR$/IntegrationExercises/IE1" />
     <file type="web" url="file://$PROJECT_DIR$/IntegrationExercises/IE2" />
+    <file type="web" url="file://$PROJECT_DIR$/JEE7/web" />
     <file type="web" url="file://$PROJECT_DIR$/JSF" />
     <file type="web" url="file://$PROJECT_DIR$/Vaadin" />
   </component>

@@ -5,11 +5,19 @@
       <module fileurl="file://$PROJECT_DIR$/Hibernate/Hibernate.iml" filepath="$PROJECT_DIR$/Hibernate/Hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/IntegrationExercises/IE1/IE1.iml" filepath="$PROJECT_DIR$/IntegrationExercises/IE1/IE1.iml" />
       <module fileurl="file://$PROJECT_DIR$/IntegrationExercises/IE2/IE2.iml" filepath="$PROJECT_DIR$/IntegrationExercises/IE2/IE2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntegrationExercises/IE4/IE4.iml" filepath="$PROJECT_DIR$/IntegrationExercises/IE4/IE4.iml" />
       <module fileurl="file://$PROJECT_DIR$/IntegrationExercises/IntegrationExercises.iml" filepath="$PROJECT_DIR$/IntegrationExercises/IntegrationExercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/Introduction/Introduction.iml" filepath="$PROJECT_DIR$/Introduction/Introduction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JEE7/JEE7.iml" filepath="$PROJECT_DIR$/JEE7/JEE7.iml" />
       <module fileurl="file://$PROJECT_DIR$/JSF/JSF.iml" filepath="$PROJECT_DIR$/JSF/JSF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMI/RMI.iml" filepath="$PROJECT_DIR$/RMI/RMI.iml" />
       <module fileurl="file://$PROJECT_DIR$/Vaadin/Vaadin.iml" filepath="$PROJECT_DIR$/Vaadin/Vaadin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JEE7/ear/ear.iml" filepath="$PROJECT_DIR$/JEE7/ear/ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JEE7/ejb/ejb.iml" filepath="$PROJECT_DIR$/JEE7/ejb/ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JEE7/ejb-client/ejb-client.iml" filepath="$PROJECT_DIR$/JEE7/ejb-client/ejb-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-projects.iml" filepath="$PROJECT_DIR$/java-projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JEE7/sa-client/sa-client.iml" filepath="$PROJECT_DIR$/JEE7/sa-client/sa-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JEE7/web/web.iml" filepath="$PROJECT_DIR$/JEE7/web/web.iml" />
     </modules>
   </component>
 </project>

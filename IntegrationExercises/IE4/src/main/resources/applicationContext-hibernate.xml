@@ -21,7 +21,7 @@
 				<prop key="hibernate.query.substitutions">true 1,false 0</prop>
 				<prop key="hibernate.max_fetch_depth">3</prop>
 				<prop key="hibernate.jdbc.batch_size">10</prop>
-				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.show_sql">true</prop> <!--true for debugging purposes-->
 				<prop key="hibernate.jdbc.fetch_size">100</prop>
 				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
@@ -29,7 +29,8 @@
 		<property name="packagesToScan" value="be.groept.ie4.entities"/>
 		<property name="mappingLocations">
 			<list>
-					<value>classpath:mappings/Eshop.hbm.xml</value>
+				<value>classpath:mappings/typedefs.hbm.xml</value>
+				<value>classpath:mappings/Eshop.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

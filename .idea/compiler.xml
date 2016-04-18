@@ -59,16 +59,73 @@
         <processorPath useClasspath="true" />
         <module name="Hibernate" />
       </profile>
+      <profile default="false" name="Annotation profile for web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="web" />
+      </profile>
+      <profile default="false" name="Annotation profile for ejb-client" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ejb-client" />
+      </profile>
+      <profile default="false" name="Annotation profile for IE4" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="IE4" />
+      </profile>
+      <profile default="false" name="Annotation profile for sa-client" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sa-client" />
+      </profile>
+      <profile default="false" name="Annotation profile for ear" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ear" />
+      </profile>
+      <profile default="false" name="Annotation profile for RMI" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="RMI" />
+      </profile>
+      <profile default="false" name="Annotation profile for ejb" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ejb" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ear" target="1.8" />
+      <module name="ejb" target="1.8" />
+      <module name="ejb-client" target="1.8" />
       <module name="Hibernate" target="1.8" />
       <module name="IE1" target="1.8" />
       <module name="IE2" target="1.8" />
+      <module name="IE4" target="1.8" />
       <module name="IntegrationExercises" target="1.8" />
       <module name="Introduction" target="1.8" />
       <module name="java-projects" target="1.8" />
+      <module name="JEE7" target="1.8" />
       <module name="JSF" target="1.8" />
+      <module name="RMI" target="1.8" />
+      <module name="sa-client" target="1.8" />
       <module name="Vaadin" target="1.8" />
+      <module name="web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
