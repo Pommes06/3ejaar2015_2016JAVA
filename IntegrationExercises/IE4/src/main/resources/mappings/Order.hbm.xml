@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+	<class name="be.groept.ie4.entities.Order" table="order_">
+
+		<id name="order_id" type="long" column="ORDER_ID" access="property">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="eshop" class="be.groept.ie4.entities.Eshop" column="ESHOP" cascade="all" />
+
+		<bag name="orderDetails" cascade="all">
+			<key column="order_id"/>
+			<one-to-many class="be.groept.ie4.entities.OrderDetail"/>
+		</bag>
+
+		<property name="orderTotal" column="ORDERTOTAL"/>
+		<property name="paymentMethod" column="PAYMENTMETHOD"/>
+
+
+	</class>
+</hibernate-mapping>

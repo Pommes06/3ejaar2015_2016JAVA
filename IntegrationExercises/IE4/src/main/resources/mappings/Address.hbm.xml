@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+	<class name="be.groept.ie4.entities.Address" table="address">
+
+		<id name="eshop_id" type="long" column="ESHOP_ID" access="property">
+			<generator class="foreign">
+					<param name="property">eshop</param>
+			</generator>
+		</id>
+		
+		<one-to-one name="eshop" class="be.groept.ie4.entities.Eshop" constrained="true"/>
+
+		<property name="box" column="BOX"/>
+		<property name="country" column="COUNTRY"/>
+		<property name="housenumber" column="HOUSENUMBER"/>
+		<property name="municipality" column="MUNICIPALITY"/>
+		<property name="postalcode" column="POSTALCODE"/>
+		<property name="street" column="STREET"/>
+
+	</class>
+</hibernate-mapping>

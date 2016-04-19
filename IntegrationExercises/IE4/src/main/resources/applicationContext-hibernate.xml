@@ -7,11 +7,11 @@
 
 	<tx:annotation-driven/>
 
-	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" scope="singleton">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" scope="singleton">
 		<property name="dataSource" ref="dataSource" />
 		<property name="hibernateProperties">
 			<props>
@@ -21,7 +21,7 @@
 				<prop key="hibernate.query.substitutions">true 1,false 0</prop>
 				<prop key="hibernate.max_fetch_depth">3</prop>
 				<prop key="hibernate.jdbc.batch_size">10</prop>
-				<prop key="hibernate.show_sql">true</prop> <!--true for debugging purposes-->
+				<prop key="hibernate.show_sql">false</prop>
 				<prop key="hibernate.jdbc.fetch_size">100</prop>
 				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
@@ -31,6 +31,11 @@
 			<list>
 				<value>classpath:mappings/typedefs.hbm.xml</value>
 				<value>classpath:mappings/Eshop.hbm.xml</value>
+				<value>classpath:mappings/Address.hbm.xml</value>
+				<value>classpath:mappings/Customer.hbm.xml</value>
+				<value>classpath:mappings/Order.hbm.xml</value>
+				<value>classpath:mappings/OrderDetail.hbm.xml</value>
+				<value>classpath:mappings/Product.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

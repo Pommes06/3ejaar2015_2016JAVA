@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+	<class name="be.groept.ie4.entities.OrderDetail" table="orderdetail">
+
+		<id name="orderdetail_id" type="long" column="ORDERDETAIL_ID" access="property">
+			<generator class="native"/>
+		</id>
+		
+		<many-to-one name="product" class="be.groept.ie4.entities.Product" column="PRODUCT" cascade="all" />
+
+		<property name="amount" column="AMOUNT"/>
+		<property name="total" column="TOTAL"/>
+
+
+	</class>
+</hibernate-mapping>

@@ -1,6 +1,13 @@
 package be.groept.ie4.dao;
 
+import be.groept.ie4.entities.Customer;
+import be.groept.ie4.entities.Order;
+
+import java.util.List;
+
 public interface OrderDao {
 
-	// TODO complete me
+	List<Order> findOrderForCustomer(Customer customer);
+
+    void saveOrder(Order order);
 }

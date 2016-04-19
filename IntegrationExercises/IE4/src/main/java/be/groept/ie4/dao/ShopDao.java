@@ -7,4 +7,6 @@ import be.groept.ie4.entities.Eshop;
 public interface ShopDao {
 
 	List<Eshop> listAllShops();
+
+	Eshop findEshopById(long eshopid);
 }

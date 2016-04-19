@@ -4,16 +4,16 @@
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-access="field">
-	<class name="be.groept.ie4.entities.Eshop" table="eshop">
+	<class name="be.groept.ie4.entities.Product" table="product">
 
-		<id name="eshop_id" type="long" column="ESHOP_ID" access="property">
+		<id name="product_id" type="long" column="PRODUCT_ID" access="property">
 			<generator class="native"/>
 		</id>
-		
+
+		<property name="shortname" column="SHORTNAME"/>
 		<property name="name" column="NAME"/>
-		<!-- <property name="eshopinfo" column="ESHOPINFO"/> -->
-		
-		<one-to-one name="address" class="be.groept.ie4.entities.Address" cascade="all-delete-orphan"/>
-	
+		<property name="numberInStock" column="NUMBERINSTOCK"/>
+		<property name="price" column="PRICE"/>
+
 	</class>
 </hibernate-mapping>

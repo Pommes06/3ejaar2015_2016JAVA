@@ -3,68 +3,81 @@ package be.groept.ie4.entities.types;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.usertype.UserType;
+import org.springframework.util.ObjectUtils;
 
 import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
-/**
- * Created by java on 19.04.16.
- */
+
 public class PasswordUserType implements UserType {
     @Override
-    public int[] sqlTypes() {
-        return new int[0];
-    }
-
-    @Override
-    public Class returnedClass() {
+    public Object nullSafeGet(ResultSet rs, String[] names,
+                              SessionImplementor session, Object owner)
+            throws HibernateException, SQLException {
+        //TODO Implement me
         return null;
     }
 
     @Override
-    public boolean equals(Object x, Object y) throws HibernateException {
-        return false;
+    public void nullSafeSet(PreparedStatement st, Object value, int index,
+                            SessionImplementor session) throws HibernateException, SQLException {
+        //TODO Implement me
     }
 
-    @Override
-    public int hashCode(Object x) throws HibernateException {
-        return 0;
-    }
-
-    @Override
-    public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor session, Object owner) throws HibernateException, SQLException {
-        return null;
-    }
-
-    @Override
-    public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor session) throws HibernateException, SQLException {
-
-    }
-
+    // -- Helpers
     @Override
     public Object deepCopy(Object value) throws HibernateException {
+        if (value != null) {
+            Password p = (Password) value;
+            return new Password(p.getClearText(), p.getPassword());
+        }
         return null;
-    }
-
-    @Override
-    public boolean isMutable() {
-        return false;
     }
 
     @Override
     public Serializable disassemble(Object value) throws HibernateException {
-        return null;
+        return (Serializable) value;
     }
 
     @Override
-    public Object assemble(Serializable cached, Object owner) throws HibernateException {
-        return null;
+    public boolean equals(Object x, Object y) throws HibernateException {
+        return ObjectUtils.nullSafeEquals(x, y);
     }
 
     @Override
-    public Object replace(Object original, Object target, Object owner) throws HibernateException {
-        return null;
+    public int hashCode(Object x) throws HibernateException {
+        return ObjectUtils.nullSafeHashCode(x);
     }
-}
+
+    @Override
+    public boolean isMutable() {
+        return true;
+    }
+
+    @Override
+    public Object replace(Object original, Object target, Object owner)
+            throws HibernateException {
+        return original;
+    }
+
+    @Override
+    public Object assemble(Serializable cached, Object owner)
+            throws HibernateException {
+        return cached;
+    }
+
+    @Override
+    public Class<?> returnedClass() {
+        return Password.class;
+    }
+
+    @Override
+    public int[] sqlTypes() {
+        return new int[] { Types.VARCHAR };
+    }
+
+    }
+

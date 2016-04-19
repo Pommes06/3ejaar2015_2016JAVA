@@ -1,5 +1,6 @@
 package be.groept.ie4.app;
 
+import be.groept.ie4.entities.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -15,6 +16,17 @@ public class EshopApplicationController {
 
 	public void run() {
 		String[] usernamePassword = getUsernamePassword();
+		String username = usernamePassword[0];
+		String password = usernamePassword[1];
+		Customer cust = shopService.loadCustomer(username);
+
+		while (cust.getPassword().getClearText() != password){
+			usernamePassword = getUsernamePassword();
+			username = usernamePassword[0];
+			password = usernamePassword[1];
+		}
+
+
 		Eshop selectedShop = getEshop();
 
 		while (true) {
@@ -34,7 +46,8 @@ public class EshopApplicationController {
 	}
 
 	private Eshop getEshop() {
-		// ....
+
+
 		return shopService.listEshops().iterator().next();
 	}
 

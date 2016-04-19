@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="field">
+	<class name="be.groept.ie4.entities.Customer" table="customer">
+
+		<id name="cust_id" type="long" column="CUST_ID" access="property">
+			<generator class="native"/>
+		</id>
+
+		<property name="firstname" column="FIRSTNAME"/>
+		<property name="name" column="NAME"/>
+
+		<property name="password" column="PASSWORD"/>
+		<property name="username" column="USERNAME"/>
+
+		<bag name="orders" cascade="all-delete-orphan">
+			<key column="cust_id" />
+			<one-to-many class="be.groept.ie4.entities.Order"/>
+		</bag>
+
+	</class>
+</hibernate-mapping>
