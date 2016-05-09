@@ -1,9 +1,8 @@
 package be.groept.chat;
 
-import java.util.List;
 import java.util.UUID;
 
-public interface ChatServer {
+public interface ChatServerWsRemote {
 
 	static final long serialVersionUID = 1L;
 
